@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+}
+
+body{
+    width: 1024px;
+    background-color: #F3F5FC;    
+    margin: 0 auto;
+    padding-top: 5vh;
+    box-sizing: border-box;    
+}
+
+/* Contenedor general */
+#contenedor-general{
+    width: 100%;
+    margin-top: 8vh;    
+    display: grid;       
+    grid-template-areas: "header sidebar"
+                        "entrada sidebar"
+                        "botones sidebar"
+                        "footer footer";
+}
+
+/* Encabezado */
+header{
+    grid-area: header;    
+}
+
+/* Caja donde se ingresa el mensaje*/
+.zona-entrada{
+    grid-area: entrada;
+    height: 50vh;    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#entrada{
+    height: 80%;
+    width: 95%;
+    background-color: #F3F5FC;
+    border-color: transparent;
+}
+
+#advertencia{
+    font-size: 9px;
+    align-self: flex-start;
+    margin-left: 3vw;
+}
+
+span{
+    content: url('https://api.iconify.design/bi/exclamation-circle-fill.svg');
+    width: 9px;    
+    margin-right: 4px;
+}
+
+/* Caja de botones para encriptar o desencriptar */
+.zona-botones{
+    grid-area: botones;
+    height: 10vh;   
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-around;
+}
+
+button{
+    border-radius: 20px;
+    font-size: 16px;
+    height: 8vh;
+}
+
+#boton-encriptar, #boton-desencriptar{
+    width: 40%;    
+}
+
+#boton-encriptar{
+    background-color: #0A3871;
+    color: white;
+}
+
+#boton-desencriptar{
+    background: #D8DFE8;
+    border: 1px solid #0A3871;
+    color: #0A3871;
+}
+
+/* Caja donde sale el mensaje encriptado o desencriptado */
+aside{
+    width: 65%;
+    margin-left: 30%;    
+    grid-area: sidebar;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.zona-salida{
+    background-color: white;
+    height: 80%;
+    border-radius: 50px 50px 0 0;
+    padding-top: 5%;  
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+#salida{
+    height: 75%;    
+    width: 80%;
+    font-size: 24px;
+    border-color: transparent;
+    background: url(./imagenes/muneco.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 50%;     
+}
+
+.salida-avisos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+}
+
+#aviso-uno{    
+    font-size: 24px;
+    font-weight: 700;    
+    color: #343A40;
+}
+
+#aviso-dos{
+    font-size: 16px;    
+    color: #495057;
+}
+
+.caja-copiar{
+    height: 20%;
+    background-color: white;   
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;   
+    border-radius: 0 0 50px 50px;
+}
+
+#boton-copiar{
+    width: 85%;
+    background-color: white;
+    color: #0A3871;
+    border: 1px solid #0A3871;
+    margin-bottom: 2vh;  
+}
+
+footer{
+    grid-area: footer;    
+    height: 5vh;
+    text-align: center;
+}
+
+@media screen and (min-width:768px) and (max-width:1023px){
+
+    body{
+        width: 768px;
+        padding-top: 3vh;        
+    }
+
+    /* Contenedor general */
+    #contenedor-general{
+        width: 100%;
+        margin-top: 0;    
+        display: grid;       
+        grid-template-areas: "header"
+                            "entrada"
+                            "botones"
+                            "sidebar"
+                            "footer";
+    }
+
+    /* Caja donde se ingresa el mensaje*/
+    .zona-entrada{
+        height: 40vh;
+        padding-top: 2vh;        
+    }
+
+    #entrada{
+        width: 90%;        
+    }
+
+    /* Caja de botones para encriptar o desencriptar */    
+    button{
+        border-radius: 20px;
+    }
+
+    #boton-encriptar, #boton-desencriptar{
+        width: 43%;    
+    }
+
+    /* Caja donde sale el mensaje encriptado o desencriptado */
+    aside{
+        width: 95%;
+        margin: 0 auto;        
+    }
+
+    .zona-salida{
+        min-height: 15vh;
+        border-radius: 50px 50px 0 0;
+        padding-top: 3%;  
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+    }
+
+    #salida{
+        width: 90% !important;
+        min-height: 1em;
+        background: none;
+        text-align: center;       
+    }
+
+    .caja-copiar{
+        height: 10vh;       
+    }
+
+    #boton-copiar{
+        width: 90%;
+        margin-bottom: 2vh;  
+    }
+}
+
+@media screen and (max-width:767px) {
+
+    body{
+        width: 375px;
+        padding-top: 3vh;        
+    }
+
+    /* Contenedor general */
+    #contenedor-general{
+        width: 100%;
+        margin-top: 0;    
+        display: grid;       
+        grid-template-areas: "header"
+                            "entrada"
+                            "botones"
+                            "sidebar"
+                            "footer";
+    }
+
+    /* Caja de botones para encriptar o desencriptar */
+    .zona-botones{        
+        height: 20vh;        
+        display: flex;
+        flex-direction: column;    
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #boton-encriptar, #boton-desencriptar{
+        width: 90%;    
+    }
+
+    /* Caja donde sale el mensaje encriptado o desencriptado */
+    aside{
+        width: 100%;
+        margin: 0 auto;  
+        
+    }
+
+    #salida{
+        width: 90% !important;
+        min-height: 1em;
+        text-align: center;          
+        background: none;          
+    }
+
+    .caja-copiar{
+        height: 14vh;       
+    }
+
+    button{
+        height: 7vh;
+    }
+
+    #boton-copiar{
+        width: 80%;
+        margin-bottom: 4vh;  
+    }    
+}
+    
+
+    
+    
+    
+
+
+
